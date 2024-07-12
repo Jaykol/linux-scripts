@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Prompt the user for input
+while true; do
+    echo "Enter a positive integer for the multiplication table:"
+    read input
+
+    # Validate input
+    if [[ "$input" =~ ^[1-9][0-9]*$ ]]; then
+        number=$input
+        break
+    else
+        echo "Error: Please enter a valid positive integer."
+    fi
+done
+
+# Generate multiplication table using list form for loop
+for i in {1..10}
+do
+    result=$((number * i))
+    echo "$number x $i = $result"
+done
